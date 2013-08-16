@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<style>
+.redColor {
+	background-color: lightsalmon;
+}
+.yellowColor {
+	background-color: lightblue;
+}
+.greenColor {
+	background-color: lightgreen;
+}
+</style>
+<h:dataTable value="#{phaseLogger.log}" var="log" rowClasses="#{phaseLogger.rowStyle}" >
+	<h:column>
+		<f:facet name="header">EVENT</f:facet>
+		#{log.event}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">SOURCE</f:facet>
+		#{log.source}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">COMPONENT</f:facet>
+		#{log.component}
+	</h:column>
+	
+	<h:column>
+		<f:facet name="header">DETAILS</f:facet>
+		#{log.details}
+	</h:column>
+</h:dataTable>
+</ui:composition>

@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<f:view >
+
+
+<h:panelGroup style="block" id="panelGroup">
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostConstructViewMapEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreDestroyViewMapEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRemoveFromViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+	
+	<h:form id="simpleForm">
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostConstructViewMapEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreDestroyViewMapEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRemoveFromViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+		
+		<h:inputText valueChangeListener="#{mySessionBackingBean.textValueChangeListener}" value="#{mySessionBackingBean.text}"  >
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostConstructViewMapEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreDestroyViewMapEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRemoveFromViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+			
+			<f:validator validatorId="MyValidator" />
+			<f:converter converterId="MyConverter"/>
+		</h:inputText>
+		
+		<h:commandButton value="send" actionListener="#{mySessionBackingBean.actionListener}" action="#{mySessionBackingBean.action}" >
+			
+		</h:commandButton>
+	
+		<ui:include src="/logRenderer.xhtml" />
+	</h:form>
+</h:panelGroup>
+</f:view>
+</html>

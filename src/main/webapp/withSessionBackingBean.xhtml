@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:panelGroup style="block">
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostConstructViewMapEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreDestroyViewMapEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRemoveFromViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+	 
+	<h:outputText value="Hello world" rendered="#{mySessionBackingBean.rendered}">
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostConstructViewMapEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreDestroyViewMapEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRemoveFromViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+	</h:outputText>
+	
+	<ui:include src="/logRenderer.xhtml" />
+</h:panelGroup>
+</html>

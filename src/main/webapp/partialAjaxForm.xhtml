@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+</h:head>
+<h:body>
+<h:panelGroup style="block" id="panelGroup">
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+	<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+	
+	<h:form id="simpleForm">
+			
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+		<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+		
+		<h:inputText id="text" valueChangeListener="#{myAjaxSessionBackingBean.textValueChangeListener}" 
+			value="#{myAjaxSessionBackingBean.text}"  >
+			
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+			
+			<f:validator validatorId="MyValidator" />
+			<f:converter converterId="MyConverter" />
+		</h:inputText>
+		
+		<h:inputText id="number" valueChangeListener="#{myAjaxSessionBackingBean.numberValueChangeListener}" 
+			value="#{myAjaxSessionBackingBean.number}"  >
+			
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostAddToViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostRestoreStateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PostValidateEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderComponentEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreRenderViewEvent" />
+			<f:event listener="#{myPhaseListener.event}" type="javax.faces.event.PreValidateEvent" />
+			
+			<f:validator validatorId="MyValidator" />
+			<f:converter converterId="MyConverter" />
+		</h:inputText>
+		
+		<h:commandButton value="ajax render:@all execute:number" actionListener="#{myAjaxSessionBackingBean.actionListener}" >
+			<f:ajax render="@all" execute="number" listener="#{myAjaxSessionBackingBean.actionAjaxListener}" />
+		</h:commandButton>
+		
+		<h:commandButton value="ajax render:@all execute:@form" actionListener="#{myAjaxSessionBackingBean.actionListener}" >
+			<f:ajax render="@all" execute="@form" listener="#{myAjaxSessionBackingBean.actionAjaxListener}" />
+		</h:commandButton>
+	
+		<ui:include src="logRenderer.xhtml" />
+	</h:form>
+</h:panelGroup>
+</h:body>
+</html>
