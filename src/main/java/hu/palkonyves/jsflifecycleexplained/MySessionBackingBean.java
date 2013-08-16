@@ -7,7 +7,7 @@ import javax.faces.component.UIComponent;
 import javax.faces.event.ActionEvent;
 import javax.faces.event.ValueChangeEvent;
 
-@RequestScoped
+@SessionScoped
 @ManagedBean
 public class MySessionBackingBean {
 
